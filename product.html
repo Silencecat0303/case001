@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<nav class="nav-light">
+    <div class="container-fluid">
+        <button class="btn btn-outline-dark nav_btn"><i class="fas fa-bars"></i></button>
+        <div class='dis_flex nav_box'>
+            <div style="flex:1">
+                <a href="default.php">
+                    <img src="img/logo.jpg" style="height:50px" class="logo_img" alt="">
+                </a>
+            </div>
+            <div class="menu_style" style="flex:6">
+                <ul class="menu">
+                    <a href="dealer.php"><li >URBAN經銷商</li></a>
+                    <a href="formpage.php"><li >聯絡URBAN</li></a>
+                    <li class="label">Peoduct
+                        <ul>
+                            <li class="item">100%防水 磬石超耐磨地板
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=1"><li>9.0mm 鉑臻系列 XL</li></a>
+                                    <a href="product_list.php?list=2"><li>9.0mm鉑美系列</li></a>
+                                    <a href="product_list.php?list=3"><li>6.5mm 鉑儷系列</li></a>
+                                </ul>
+                            </li>
+                            <li class="item">實木複合 法國橡木長寬板
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=4"><li>15mm 法國香頌系列</li></a>
+                                </ul>
+                            </li>
+                            <li class="item">實木複合 結構人字拼
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=5"><li>15mm 動感魅力系列</li></a>
+                                </ul>
+                            </li>
+                            <li class="item">歐洲進口 降造橡膠墊
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=6"><li>室內型 運動橡膠地墊</li></a>
+                                    <a href="product_list.php?list=7"><li>戶外型 運動橡膠地墊</li></a>
+                                    <a href="product_list.php?list=8"><li>抗震降噪 橡膠地墊</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="black_cloth"></div>
+<script>
+    $(document).on("click",".nav_btn",function(){
+        if($(".menu_style").css("transform")==="matrix(1, 0, 0, 1, 0, 0)"){
+            $(".menu_style").css("transform","translate(-100%)");
+            $(".black_cloth").css("display","none");
+        }else{
+            $(".menu_style").css("transform","translate(0)");
+            $(".black_cloth").css("display","block");
+        }        
+    });
+</script>
+<div class="container mt_70 pro_box">
+    <div class="row py-3">
+        <!-- <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="pro_bg" style="background-image:url(img/content_title.jpg)"></div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <h1 class="pro_title font-weight-bolder">9.0MM 鉑臻系列  XL</h1>
+            <h5 class="pro_subtitle">WMF-33561 拉什莫爾 淺橡</h5>
+            <div class="pro_sample">
+                <img src="img/content_sample.jpg" alt="">
+            </div>
+        </div> -->
+        <div class="col-12">
+            <div class="main_pro" style="background-image:url(img/content_title.jpg)">
+                <!-- <img src="img/content_title.jpg" alt="" width="100%"> -->
+                <img src="img/content_sample.jpg" alt="" width="100%" class="move_box">
+                <div class="word_pro">
+                    <h1 >9.0MM 鉑臻系列  XL</h1>
+                    <h5 >WMF-33561 拉什莫爾 淺橡</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-12"><hr></div>
+        <div class="col-12 pro_content" >
+            <img src="img/content001.jpg" alt="">
+            <img src="img/content002.jpg" alt="">
+            <img src="img/content003.jpg" alt="">
+            <img src="img/content004.jpg" alt="">
+        </div>
+        <div class="col-12"><hr></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="pb-2">人氣排行</h2>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 my-2">
+            <a href="product.php?pro=2">
+                <div class="pro_sam" style="background-image:url(img/product_list001.jpg)">
+                    <div class="overlay">
+                        <div class = "items"></div>
+                            <div class = "items head">
+                            <p>9.0MM <br>鉑美系列</p>
+                            <hr>
+                        </div>
+                        <div class="items cart">
+                            <span>YSM-11686 德克薩斯 淺橡</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 my-2">
+            <a href="product.php?pro=3">
+                <div class="pro_sam" style="background-image:url(img/product_list002.jpg)">
+                    <div class="overlay">
+                        <div class = "items"></div>
+                            <div class = "items head">
+                            <p>Flower Embroidery Hoop Art</p>
+                            <hr>
+                        </div>
+                        <div class="items cart">
+                            <span>ADD TO CART</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 my-2">
+            <a href="product.php?pro=4">
+                <div class="pro_sam" style="background-image:url(img/product_list003.jpg)">
+                    <div class="overlay">
+                        <div class = "items"></div>
+                            <div class = "items head">
+                            <p>Flower Embroidery Hoop Art</p>
+                            <hr>
+                        </div>
+                        <div class="items cart">
+                            <span>ADD TO CART</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 my-2">
+            <a href="product.php?pro=5">
+                <div class="pro_sam" style="background-image:url(img/product_list004.jpg)">
+                    <div class="overlay">
+                        <div class = "items"></div>
+                            <div class = "items head">
+                            <p>Flower Embroidery Hoop Art</p>
+                            <hr>
+                        </div>
+                        <div class="items cart">
+                            <span>ADD TO CART</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="footer" id="footer">
+    <div class="footer_linear">
+    </div>
+    <div class="container footer_container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">Copyright©URBAN TAIWAN. All Rights Reserved</div>
+            <div class="col-sm-12 col-md-6 col-lg-4">綠能新科技 | 地材第一品盤 服務專線：02-29900967</div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <i class="fab fa-line wd-tifferny"></i>
+                <i class="fab fa-instagram-square wd-tifferny"></i>
+                <i class="fab fa-youtube-square wd-tifferny"></i>
+                <i class="fab fa-facebook-square wd-tifferny"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="to_up_btn">
+    <i class="fas fa-chevron-circle-up"></i>
+</div>
+<script>
+    $(document).ready(function(){
+        let height=$(window).height();
+        let footer=$("html,#footer").height();
+        if(footer<height){
+            $("#footer").css({
+                "position":"fixed",
+                "bottom":"0"
+            });
+        }
+    })
+    $(window).scroll(function(){
+        let top=$(this).scrollTop();
+        let height=$(this).height();
+        let footer=$("html,#footer").height();
+        if(top>height){
+            $("#to_up_btn").fadeIn(500);
+        }else{
+            $("#to_up_btn").fadeOut(500);
+        }
+        if(footer>height){
+            $("#footer").css({
+                "position":"relative"
+            });
+        }else{
+            $("#footer").css({
+                "position":"fixed",
+                "bottom":"0"
+            });
+        }
+    });
+    $(document).on("click","#to_up_btn",function(){
+        $('html,body').animate({scrollTop:0}, 500);
+    })
+</script>

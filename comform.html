@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<nav class="nav-light">
+    <div class="container-fluid">
+        <button class="btn btn-outline-dark nav_btn"><i class="fas fa-bars"></i></button>
+        <div class='dis_flex nav_box'>
+            <div style="flex:1">
+                <a href="default.php">
+                    <img src="img/logo.jpg" style="height:50px" class="logo_img" alt="">
+                </a>
+            </div>
+            <div class="menu_style" style="flex:6">
+                <ul class="menu">
+                    <a href="dealer.php"><li >URBAN經銷商</li></a>
+                    <a href="formpage.php"><li >聯絡URBAN</li></a>
+                    <li class="label">Peoduct
+                        <ul>
+                            <li class="item">100%防水 磬石超耐磨地板
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=1"><li>9.0mm 鉑臻系列 XL</li></a>
+                                    <a href="product_list.php?list=2"><li>9.0mm鉑美系列</li></a>
+                                    <a href="product_list.php?list=3"><li>6.5mm 鉑儷系列</li></a>
+                                </ul>
+                            </li>
+                            <li class="item">實木複合 法國橡木長寬板
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=4"><li>15mm 法國香頌系列</li></a>
+                                </ul>
+                            </li>
+                            <li class="item">實木複合 結構人字拼
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=5"><li>15mm 動感魅力系列</li></a>
+                                </ul>
+                            </li>
+                            <li class="item">歐洲進口 降造橡膠墊
+                                <ul class="sub_item">
+                                    <a href="product_list.php?list=6"><li>室內型 運動橡膠地墊</li></a>
+                                    <a href="product_list.php?list=7"><li>戶外型 運動橡膠地墊</li></a>
+                                    <a href="product_list.php?list=8"><li>抗震降噪 橡膠地墊</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="black_cloth"></div>
+<script>
+    $(document).on("click",".nav_btn",function(){
+        if($(".menu_style").css("transform")==="matrix(1, 0, 0, 1, 0, 0)"){
+            $(".menu_style").css("transform","translate(-100%)");
+            $(".black_cloth").css("display","none");
+        }else{
+            $(".menu_style").css("transform","translate(0)");
+            $(".black_cloth").css("display","block");
+        }        
+    });
+</script>
+<div class="container mt_70">
+    <div class="row">
+        <div class="col-12 px-5 mt-5">
+            <h2>感謝您的填寫，我們會盡快回覆您！</h2>
+            <div class="py-5">
+                URBAN 本著地材第一品牌的使命，使用綠材新科技，將健康且具質感的木地板融入日常，讓生活美學升級：）<br>
+                感謝您對 URBAN的喜愛，如果您喜歡我們的地材，請您留下資料，我們會盡快與您聯絡，謝謝～
+            </div>
+            <hr class="form_hr">
+            <div class="mt-5 text-center mb_200">
+                <button class="btn btn_disabled" disabled="disabled">已送出</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer" id="footer">
+    <div class="footer_linear">
+    </div>
+    <div class="container footer_container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">Copyright©URBAN TAIWAN. All Rights Reserved</div>
+            <div class="col-sm-12 col-md-6 col-lg-4">綠能新科技 | 地材第一品盤 服務專線：02-29900967</div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <i class="fab fa-line wd-tifferny"></i>
+                <i class="fab fa-instagram-square wd-tifferny"></i>
+                <i class="fab fa-youtube-square wd-tifferny"></i>
+                <i class="fab fa-facebook-square wd-tifferny"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="to_up_btn">
+    <i class="fas fa-chevron-circle-up"></i>
+</div>
+<script>
+    $(document).ready(function(){
+        let height=$(window).height();
+        let footer=$("html,#footer").height();
+        if(footer<height){
+            $("#footer").css({
+                "position":"fixed",
+                "bottom":"0"
+            });
+        }
+    })
+    $(window).scroll(function(){
+        let top=$(this).scrollTop();
+        let height=$(this).height();
+        let footer=$("html,#footer").height();
+        if(top>height){
+            $("#to_up_btn").fadeIn(500);
+        }else{
+            $("#to_up_btn").fadeOut(500);
+        }
+        if(footer>height){
+            $("#footer").css({
+                "position":"relative"
+            });
+        }else{
+            $("#footer").css({
+                "position":"fixed",
+                "bottom":"0"
+            });
+        }
+    });
+    $(document).on("click","#to_up_btn",function(){
+        $('html,body').animate({scrollTop:0}, 500);
+    })
+</script>
