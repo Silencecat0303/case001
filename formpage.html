@@ -30,29 +30,29 @@
                     <a href="dealer.html"><li >URBAN經銷商</li></a>
                     <a href="formpage.html"><li >聯絡URBAN</li></a>
                     <li class="label">Peoduct
-                        <ul>
-                            <li class="item">100%防水 磬石超耐磨地板
+                        <ul class="label_sub">
+                            <li class="item"><p>100%防水 磬石超耐磨地板</p>
                                 <ul class="sub_item">
-                                    <a href="product_list.html?list=1"><li>9.0mm 鉑臻系列 XL</li></a>
-                                    <a href="product_list.html?list=2"><li>9.0mm鉑美系列</li></a>
-                                    <a href="product_list.html?list=3"><li>6.5mm 鉑儷系列</li></a>
+                                    <a href="product_list.php?list=1"><li>9.0mm 鉑臻系列 XL</li></a>
+                                    <a href="product_list.php?list=2"><li>9.0mm鉑美系列</li></a>
+                                    <a href="product_list.php?list=3"><li>6.5mm 鉑儷系列</li></a>
                                 </ul>
                             </li>
-                            <li class="item">實木複合 法國橡木長寬板
+                            <li class="item"><p>實木複合 法國橡木長寬板</p>
                                 <ul class="sub_item">
-                                    <a href="product_list.html?list=4"><li>15mm 法國香頌系列</li></a>
+                                    <a href="product_list.php?list=4"><li>15mm 法國香頌系列</li></a>
                                 </ul>
                             </li>
-                            <li class="item">實木複合 結構人字拼
+                            <li class="item"><p>實木複合 結構人字拼</p>
                                 <ul class="sub_item">
-                                    <a href="product_list.html?list=5"><li>15mm 動感魅力系列</li></a>
+                                    <a href="product_list.php?list=5"><li>15mm 動感魅力系列</li></a>
                                 </ul>
                             </li>
-                            <li class="item">歐洲進口 降造橡膠墊
+                            <li class="item"><p>歐洲進口 降造橡膠墊</p>
                                 <ul class="sub_item">
-                                    <a href="product_list.html?list=6"><li>室內型 運動橡膠地墊</li></a>
-                                    <a href="product_list.html?list=7"><li>戶外型 運動橡膠地墊</li></a>
-                                    <a href="product_list.html?list=8"><li>抗震降噪 橡膠地墊</li></a>
+                                    <a href="product_list.php?list=6"><li>室內型 運動橡膠地墊</li></a>
+                                    <a href="product_list.php?list=7"><li>戶外型 運動橡膠地墊</li></a>
+                                    <a href="product_list.php?list=8"><li>抗震降噪 橡膠地墊</li></a>
                                 </ul>
                             </li>
                         </ul>
@@ -92,6 +92,7 @@
                         <h4>基本資料</h4>
                     </div>
                     <div id="name"></div>
+                    <div id="appellation"></div>
                     <div id="telephone"></div>
                     <div id="email"></div>
                     <div id="time">
@@ -102,16 +103,6 @@
                     </div>
                     <div id="title"></div>
                     <div id="product">
-                        <!-- <h5>產品</h5>
-                        <select name="serious" id="" class="pretty-select dv1">
-                            <option><請選擇></option>
-                            <option>1111111</option>
-                            <option>2222222</option>
-                            <option>3333333</option>
-                            <option>4444444</option>
-                            <option>5555555</option>
-                            <option>6666666</option>
-                        </select> -->
                     </div>
                     <div id="content"></div>
                     <div class="my-5 text-center">
@@ -124,6 +115,13 @@
     
     <script type="text/babel">
         ReactDOM.render(<FormInput name="name" ask="如何稱呼您？" placeholder="請輸入您的名稱" type="text" elem="input" isNeed={true}/>,getID("name"));
+        const appell=[
+            {value:1,html:"先生"},
+            {value:2,html:"女士"},
+            {value:3,html:"設計師"},
+            {value:4,html:"建築師"},
+        ]
+        ReactDOM.render(<OuterClickExample title="稱謂" option={appell} isNeed={false}/>,getID("appellation"));
         ReactDOM.render(<FormInput name="tel" ask="聯絡電話" placeholder="請輸入您常用的電話號碼" type="text" elem="input" isNeed={false}/>,getID("telephone"));
         ReactDOM.render(<FormInput name="email" ask="電子郵件地址" placeholder="example@mail.com" type="email" elem="input" isNeed={true}/>,getID("email"));
         ReactDOM.render(<FormInput name="title" ask="標題" placeholder="主題" type="text" elem="input" isNeed={false}/>,getID("title"));
