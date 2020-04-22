@@ -16,72 +16,72 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
-<nav class="nav-light">
-    <div class="container-fluid">
-        <button class="btn btn-outline-dark nav_btn"><i class="fas fa-bars"></i></button>
-        <div class='dis_flex nav_box'>
-            <div style="flex:1">
-                <a href="index.html">
-                    <img src="img/logo.jpg" style="height:50px" class="logo_img" alt="">
-                </a>
-            </div>
-            <div class="menu_style" style="flex:6">
-                <ul class="menu">
-                    <li class="label menu_li">Peoduct
-                        <ul class="label_sub">
-                            <li class="item"><p>100%防水 磬石超耐磨地板</p>
-                                <ul class="sub_item">
-                                    <a href="product_list.html?list=1"><li>9.0mm 鉑臻系列 XL</li></a>
-                                    <a href="product_list.html?list=2"><li>9.0mm鉑美系列</li></a>
-                                    <a href="product_list.html?list=3"><li>6.5mm 鉑儷系列</li></a>
-                                </ul>
-                            </li>
-                            <li class="item"><p>實木複合 法國橡木長寬板</p>
-                                <ul class="sub_item">
-                                    <a href="product_list.html?list=4"><li>15mm 法國香頌系列</li></a>
-                                </ul>
-                            </li>
-                            <li class="item"><p>實木複合 結構人字拼</p>
-                                <ul class="sub_item">
-                                    <a href="product_list.html?list=5"><li>15mm 動感魅力系列</li></a>
-                                </ul>
-                            </li>
-                            <li class="item"><p>歐洲進口 降造橡膠墊</p>
-                                <ul class="sub_item">
-                                    <a href="product_list.html?list=6"><li>室內型 運動橡膠地墊</li></a>
-                                    <a href="product_list.html?list=7"><li>戶外型 運動橡膠地墊</li></a>
-                                    <a href="product_list.html?list=8"><li>抗震降噪 橡膠地墊</li></a>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <a href="dealer.html"><li class="menu_li">URBAN經銷商</li></a>
-                    <a href="formpage.html"><li class="menu_li">聯絡URBAN</li></a>
-                </ul>
-            </div>
-        </div>
-    </div>
+<nav class="menu">
+    <a id="menubtn" class="toggle-nav" href="#"><i class="fas fa-bars"></i></a>
+    <div class="menu-logo"><a href="default.html"><img src="img/logo.jpg" alt=""></a></div>
+    <ul id="menuUl" class="active">
+        <li class="current-active" id="pro_menu">PRODUCT</li>
+        <li><a href="./dealer.html">URBAN經銷商</a></li>
+        <li><a href="./formpage.html">聯絡URBAN</a></li>
+    </ul>
 </nav>
-<div class="black_cloth"></div>
+<div id="bran_menu">
+    <ul id="bran_pro">
+        <li>
+            100%防水 磬石超耐磨地板
+                <ul>
+                    <a href="./product_list.html?pro=001"><li>9.0mm 鉑臻系列 XL</li></a>
+                    <a href="./proproduct_listduct.html?pro=001"><li>9.0mm鉑美系列</li></a>
+                    <a href="./product_list.html?pro=001"><li>6.5mm 鉑儷系列</li></a>
+                </ul>
+        </li>
+        <li>
+            實木複合 法國橡木長寬板
+                <ul>
+                    <a href="./product_list.html?pro=001"><li>15mm 法國香頌系列</li></a>
+                </ul>
+        </li>
+        <li>
+            歐洲進口 降造橡膠墊
+                <ul>
+                    <a href="./product_list.html?pro=001"><li>15mm 動感魅力系列</li></a>
+                </ul>
+        </li>
+        <li>
+            實木複合 結構人字拼
+                <ul>
+                    <a href="./product_list.html?pro=001"><li>室內型 運動橡膠地墊</li></a>
+                    <a href="./product_list.html?pro=001"><li>戶外型 運動橡膠地墊</li></a>
+                    <a href="./product_list.html?pro=001"><li>抗震降噪 橡膠地墊</li></a>
+                </ul>
+        </li>
+    </ul>
+</div>
 <script>
-    $(document).on("click",".nav_btn",function(){
-        if($(".menu_style").css("transform")==="matrix(1, 0, 0, 1, 0, 0)"){
-            $(".menu_style").css("transform","translate(-100%)");
-            $(".black_cloth").css("display","none");
-        }else{
-            $(".menu_style").css("transform","translate(0)");
-            $(".black_cloth").css("display","block");
-        }        
+    $(document).on("click","#menuUl li",function(){
+        let index=$("#menuUl li").index(this);
+        $("#menuUl li").css("color","black");
+        $("#menuUl li").eq(index).css("color","rgb(22,156,156)");
+    });
+    $(document).on("click","#pro_menu",function(){
+        $("#bran_menu").slideToggle();
+        $("#bran_pro ul").slideUp();
+    });
+    $(document).on("click","#bran_pro>li",function(){
+        let index=$("#bran_pro>li").index(this);
+        $("#bran_pro ul").slideUp();
+        $("#bran_pro ul").eq(index).slideToggle();
     });
 </script>
-<div class="container mt_70 pro_box">
+<div class="container mt_1 pro_box">
     <div class="row py-3">
         <div class="col-sm-12 col-md-7 col-lg-7">
-            <div class="pro_bg" style="background-image:url(img/content_title.jpg)"></div>
+            <!-- <div class="pro_bg preview" style="background-image:url()"></div> -->
+            <img src="img/content_title.jpg" alt="" class="pro_bg preview">
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5">
             <div class="pro_sample">
-                <img src="img/content_sample.jpg" alt="">
+                <img src="img/content_sample.jpg" alt="" class="preview">
             </div>
             <h1 class="pro_title font-weight-bolder mt-2">9.0MM 鉑臻系列  XL</h1>
             <h5 class="pro_subtitle">WMF-33561 拉什莫爾 淺橡</h5>
@@ -106,7 +106,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="pb-2">人氣排行</h2>
+            <h2 class="pb-2">想看看其他地板...</h2>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 my-2">
             <a href="product.html?pro=2">
@@ -174,14 +174,30 @@
         </div>
     </div>
 </div>
+<div id="prew_black">
+    <div id="prew_white">
+        <div id="no_btn"><i class="fas fa-times-circle"></i></div>
+        <img>
+    </div>
+</div>
+<script>
+$(document).on("click",".preview",function(){
+    $("#prew_black").css("display","block");
+    $("#prew_white img").attr("src",this.src);
+    $("#prew_white img").css("height","95vh");
+});
+$(document).on("click","#no_btn",function(){
+    $("#prew_black").css("display","none");
+});
+</script>
 <div class="footer" id="footer">
     <div class="footer_linear">
     </div>
     <div class="container footer_container">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6">
-                Copyright©URBAN TAIWAN. All Rights Reserved<br>
-                綠能新科技 | 地材第一品盤 服務專線：02-29900967
+                Copyright©2020 總代理 摩綠國際有限公司 All Rights Reserved<br>
+                TEL：02-2706-7100&nbsp;&nbsp;FAX：02-2703-2059&nbsp;&nbsp;<i class="fab fa-line" style="color:#28FF28"></i>Line：urban-tw
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <i class="fab fa-line wd-tifferny"></i>
