@@ -25,6 +25,12 @@ a:hover,a:visited{
 .bor-tifferny{
     border-color:rgb(22,156,156);
 }
+.fsize_16{
+    font-size:16px;
+}
+.fsize_18{
+    font-size:18px;
+}
 .menu {
     width: 100%;
     display: flex;
